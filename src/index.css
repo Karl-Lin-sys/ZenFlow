@@ -1,0 +1,86 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-sans: 'Inter', sans-serif;
+    --font-serif: 'Cormorant Garamond', serif;
+    
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+}
+
+:root {
+    --background: #0a0502;
+    --foreground: #e0d8d0;
+    --card: rgba(255, 80, 20, 0.05);
+    --card-foreground: #e0d8d0;
+    --popover: #0a0502;
+    --popover-foreground: #e0d8d0;
+    --primary: #ff4e00;
+    --primary-foreground: #ffffff;
+    --secondary: rgba(255, 255, 255, 0.1);
+    --secondary-foreground: #ffffff;
+    --muted: rgba(255, 255, 255, 0.05);
+    --muted-foreground: rgba(224, 216, 208, 0.6);
+    --accent: rgba(255, 78, 0, 0.2);
+    --accent-foreground: #ffffff;
+    --destructive: #ff4444;
+    --destructive-foreground: #ffffff;
+    --border: rgba(255, 200, 150, 0.1);
+    --input: rgba(255, 200, 150, 0.1);
+    --ring: #ff4e00;
+    --radius: 1.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    background: 
+      radial-gradient(circle at 50% -20%, #3a1510 0%, transparent 60%),
+      radial-gradient(circle at 10% 80%, rgba(255, 78, 0, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 90% 90%, rgba(255, 78, 0, 0.1) 0%, transparent 50%),
+      #0a0502;
+    min-height: 100vh;
+  }
+}
+
+.glass {
+  @apply bg-white/5 backdrop-blur-3xl border border-white/10;
+}
+
+.glass-dark {
+  @apply bg-black/40 backdrop-blur-3xl border border-white/5;
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.fade-mask {
+  mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+}
